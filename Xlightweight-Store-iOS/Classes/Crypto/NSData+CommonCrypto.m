@@ -44,7 +44,7 @@
 
 NSString * const kCommonCryptoErrorDomain = @"CommonCryptoErrorDomain";
 
-@implementation NSError (CommonCryptoErrorDomain)
+@implementation NSError (iCommonCryptoErrorDomain)
 
 + (NSError *) errorWithCCCryptorStatus: (CCCryptorStatus) status
 {
@@ -104,7 +104,7 @@ NSString * const kCommonCryptoErrorDomain = @"CommonCryptoErrorDomain";
 
 #pragma mark -
 
-@implementation NSData (CommonDigest)
+@implementation NSData (iCommonDigest)
 
 - (NSData *) MD2Sum
 {
@@ -164,7 +164,7 @@ NSString * const kCommonCryptoErrorDomain = @"CommonCryptoErrorDomain";
 
 @end
 
-@implementation NSData (CommonCryptor)
+@implementation NSData (iCommonCryptor)
 
 - (NSData *) AES256EncryptedDataUsingKey: (id) key error: (NSError **) error
 {
@@ -333,7 +333,7 @@ static void FixKeyLengths( CCAlgorithm algorithm, NSMutableData * keyData, NSMut
 	[ivData setLength: [keyData length]];
 }
 
-@implementation NSData (LowLevelCommonCryptor)
+@implementation NSData (iLowLevelCommonCryptor)
 
 - (NSData *) _runCryptor: (CCCryptorRef) cryptor result: (CCCryptorStatus *) status
 {
@@ -505,7 +505,7 @@ static void FixKeyLengths( CCAlgorithm algorithm, NSMutableData * keyData, NSMut
 
 @end
 
-@implementation NSData (CommonHMAC)
+@implementation NSData (iCommonHMAC)
 
 - (NSData *) HMACWithAlgorithm: (CCHmacAlgorithm) algorithm
 {

@@ -43,11 +43,11 @@
 
 extern NSString * const kCommonCryptoErrorDomain;
 
-@interface NSError (CommonCryptoErrorDomain)
+@interface NSError (iCommonCryptoErrorDomain)
 + (NSError *) errorWithCCCryptorStatus: (CCCryptorStatus) status;
 @end
 
-@interface NSData (CommonDigest)
+@interface NSData (iCommonDigest)
 
 - (NSData *) MD2Sum;
 - (NSData *) MD4Sum;
@@ -61,7 +61,7 @@ extern NSString * const kCommonCryptoErrorDomain;
 
 @end
 
-@interface NSData (CommonCryptor)
+@interface NSData (iCommonCryptor)
 
 - (NSData *) AES256EncryptedDataUsingKey: (id) key error: (NSError **) error;
 - (NSData *) decryptedAES256DataUsingKey: (id) key error: (NSError **) error;
@@ -74,7 +74,7 @@ extern NSString * const kCommonCryptoErrorDomain;
 
 @end
 
-@interface NSData (LowLevelCommonCryptor)
+@interface NSData (iLowLevelCommonCryptor)
 
 - (NSData *) dataEncryptedUsingAlgorithm: (CCAlgorithm) algorithm
 									 key: (id) key		// data or string
@@ -104,7 +104,7 @@ extern NSString * const kCommonCryptoErrorDomain;
 
 @end
 
-@interface NSData (CommonHMAC)
+@interface NSData (iCommonHMAC)
 
 - (NSData *) HMACWithAlgorithm: (CCHmacAlgorithm) algorithm;
 - (NSData *) HMACWithAlgorithm: (CCHmacAlgorithm) algorithm key: (id) key;

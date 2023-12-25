@@ -23,6 +23,9 @@
 
 #import <Foundation/Foundation.h>
 
+
+@interface NSData (iBase64)
+
 void *NewBase64Decode(
                       const char *inputBuffer,
                       size_t length,
@@ -33,8 +36,6 @@ char *NewBase64Encode(
                       size_t length,
                       bool separateLines,
                       size_t *outputLength);
-
-@interface NSData (Base64)
 
 + (NSData *)dataFromBase64String:(NSString *)aString;
 - (NSString *)base64EncodedString;
